@@ -5,8 +5,8 @@
 
 <body>
 <a href="/items/new">Create Item</a>
-<% ARRAY.create_item(@new_item).each do |item| %>
-    <%= item.name %> - <%= item.id %>
+<% @display_list.each do |item| %>
+   <li> <%= item.name %> - <a href="/items/<%= item.id %>">Show <%= item.id %></a></li>
 <% end %>
 
 </body>
