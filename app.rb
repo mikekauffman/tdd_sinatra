@@ -23,7 +23,14 @@ class App < Sinatra::Base
   get '/items/:id' do
     item_id = params[:id]
     @showed = ARRAY.show_item(item_id)
-    erb :item
+    if @showed.nil?
+      status 404
+      erb :not_found
+    else
+      @showed
+      erb :item
+    end
   end
+
 
 end

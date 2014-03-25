@@ -14,4 +14,9 @@ feature "managing list of items" do
     click_link "Show 1"
     expect(page).to have_content 'Channa Masala'
   end
+
+  scenario "Displays 404 template page when item id doesn't exist" do
+    visit "/items/10"
+    expect(page).to have_content "404"
+  end
 end

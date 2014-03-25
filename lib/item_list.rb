@@ -16,8 +16,11 @@ class ItemsList
     @items_list.each do |item|
       if item.id == id.to_i
         return item.name
+
+
       end
     end
+    nil
   end
 
 end
