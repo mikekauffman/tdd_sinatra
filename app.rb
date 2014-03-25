@@ -4,7 +4,7 @@ require './lib/item_list'
 
 class App < Sinatra::Base
 
-set :array, ItemsList.new
+  set :array, ItemsList.new
 
   get '/' do
     erb :index
@@ -15,7 +15,7 @@ set :array, ItemsList.new
   end
 
   post '/' do
-  @new_item = params[:new_item]
+    @new_item = params[:new_item]
     erb :index
   end
 

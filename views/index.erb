@@ -1,13 +1,13 @@
-
 <html>
 <title>
 
 </title>
+
 <body>
 <a href="/items/new">Create Item</a>
-  <% ARRAY.create_item(@new_item).each do |item| %>
+<% ARRAY.create_item(@new_item).each do |item| %>
     <%= item.name %> - <%= item.id %>
-    <% end %>
+<% end %>
 
 </body>
 </html>

@@ -6,7 +6,7 @@ Capybara.app = App
 feature "managing list of items" do
 
   scenario "Displays current list of items" do
-  visit "/"
+    visit "/"
     click_link 'Create Item'
     fill_in "new_item", :with => 'Channa Masala'
     click_on 'Create New Item'
