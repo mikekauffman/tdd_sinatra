@@ -1,8 +1,11 @@
 require 'sinatra/base'
+require './lib/item_class'
+require './lib/item_list'
 
 class App < Sinatra::Base
 
-  ITEMS_LIST = []
+set :array, ItemsList.new
+
   get '/' do
     erb :index
   end
@@ -12,8 +15,12 @@ class App < Sinatra::Base
   end
 
   post '/' do
-   ITEMS_LIST << params[:new_item]
+  @new_item = params[:new_item]
     erb :index
+  end
+
+  get '/single_item' do
+    erb :item
   end
 
 end

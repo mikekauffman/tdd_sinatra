@@ -1,11 +1,12 @@
+
 <html>
 <title>
 
 </title>
 <body>
 <a href="/items/new">Create Item</a>
-<% ITEMS_LIST.each do |item| %>
- <%= item %>
+  <% ARRAY.create_item(@new_item).each do |item| %>
+    <%= item.name %> - <%= item.id %>
     <% end %>
 
 </body>
