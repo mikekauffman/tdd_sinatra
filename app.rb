@@ -20,9 +20,10 @@ class App < Sinatra::Base
     redirect '/'
   end
 
-  get '/single_item' do
+  get '/items/:id' do
+    item_id = params[:id]
+    @showed = ARRAY.show_item(item_id)
     erb :item
   end
-
 
 end

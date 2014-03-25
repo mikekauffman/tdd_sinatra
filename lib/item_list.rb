@@ -12,5 +12,12 @@ class ItemsList
     items_list << Item.new(id, text_input)
     items_list
   end
+  def show_item(id)
+    @items_list.each do |item|
+      if item.id == id.to_i
+        return item.name
+      end
+    end
+  end
 
 end

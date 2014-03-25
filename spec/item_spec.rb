@@ -11,6 +11,7 @@ feature "managing list of items" do
     fill_in "new_item", :with => 'Channa Masala'
     click_on 'Create New Item'
     expect(page).to have_content 'Channa Masala'
-
+    click_link "Show 1"
+    expect(page).to have_content 'Channa Masala'
   end
 end
