@@ -16,11 +16,16 @@ class ItemsList
     @items_list.each do |item|
       if item.id == id.to_i
         return item.name
-
-
       end
     end
     nil
   end
+  def edit_item(edited_input, original_id)
+    @items_list.each do |item|
+      if item.id == original_id
+        item.name = edited_input.to_s
+      end
+    end
 
+  end
 end

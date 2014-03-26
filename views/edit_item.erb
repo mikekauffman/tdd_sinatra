@@ -1,0 +1,14 @@
+<html>
+<title>
+
+</title>
+
+<body>
+
+<form action="/items/<%= @item_id %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="edit_item"/>
+  <button type="submit">Edit item</button>
+</form>
+</body>
+</html>
