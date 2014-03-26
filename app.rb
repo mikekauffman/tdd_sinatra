@@ -7,8 +7,7 @@ ARRAY = ItemsList.new
 class App < Sinatra::Application
 
   get '/' do
-
-    erb :index, :locals => {:display => ARRAY.items_list}
+    erb :index, locals: {display: ARRAY.items_list}
   end
 
   get '/items/new' do
@@ -21,19 +20,17 @@ class App < Sinatra::Application
   end
 
   get '/items/:id' do
-    @item_id = params[:id]
-    @showed = ARRAY.show_item(@item_id)
-    if @showed.nil?
+    showed = ARRAY.show_item(params[:id])
+    if showed.nil?
       status 404
       erb :not_found
     else
-      @showed
-      erb :item
+      showed
+      erb :item, locals: {item_id: params[:id], showed: showed}
     end
   end
   get '/items/:id/edit' do
-  @item_id = params[:id]
-  erb :edit_item
+    erb :edit_item, locals: {item_id: params[:id]}
   end
 
   put '/items/:id' do

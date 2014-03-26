@@ -32,6 +32,5 @@ feature "managing list of items" do
     click_on "Edit item"
     expect(page).to have_content 'Sushi'
     expect(page).to_not have_content 'Pizza'
-    save_and_open_page
   end
 end
